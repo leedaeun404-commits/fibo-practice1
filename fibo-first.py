@@ -1,13 +1,13 @@
 def fibo(n):
-    if n < 2:
-        return n
-    return fibo(n - 1) + fibo(n - 2)
+    pad = {0: 0, 1: 1}
 
-if __name__ == "__main__":
-    print(fibo(10))def fibo(n):
-    if n < 2:
-        return n
-    return fibo(n - 1) + fibo(n - 2)
+    def fib_inner(k):
+        if k not in pad:
+            pad[k] = fib_inner(k - 1) + fib_inner(k - 2)
+        return pad[k]
+
+    return fib_inner(n)
+
 
 if __name__ == "__main__":
     print(fibo(10))
