@@ -1,7 +1,12 @@
 def fibonacci_sequence(k):
-    if k < 2:
-        return k
-    return fibonacci_sequence(k - 1) + fibonacci_sequence(k - 2)
+    pad = {0: 0, 1: 1}
+
+    def fib_inner(k):
+        if k not in pad:
+            pad[k] = fib_inner(k - 1) + fib_inner(k - 2)
+        return pad[k]
+
+    return fib_inner(k)
 
 
 if __name__ == "__main__":
