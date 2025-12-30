@@ -1,13 +1,8 @@
-def fibo(n):
-    if n < 2:
-        return n
-    return fibo(n - 1) + fibo(n - 2)
+def fibonacci_sequence(k):
+    if k < 2:
+        return k
+    return fibonacci_sequence(k - 1) + fibonacci_sequence(k - 2)
+
 
 if __name__ == "__main__":
-    print(fibo(10))def fibo(n):
-    if n < 2:
-        return n
-    return fibo(n - 1) + fibo(n - 2)
-
-if __name__ == "__main__":
-    print(fibo(10))
+    print(fibonacci_sequence(10))
